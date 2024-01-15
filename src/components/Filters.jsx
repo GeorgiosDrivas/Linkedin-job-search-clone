@@ -5,8 +5,9 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import Button from '@mui/material/Button';
 
-function Filters() {
+export function Filters() {
     const [type, setType] = useState('');
     const [location, setLocation] = useState('');
     const [date, setDate] = useState('');
@@ -25,7 +26,7 @@ function Filters() {
                 </Grid>
                 <Grid item xs={7} >{/* Filters */}
                     <Grid container justifyContent={"space-evenly"}>
-                        <FormControl sx={{ minWidth: 150 }}>
+                        <FormControl sx={{ minWidth: 150 }}> {/* Job type select */}
                             <InputLabel id="type-select-label">Type</InputLabel>
                             <Select
                                 labelId="type-select-label"
@@ -39,7 +40,7 @@ function Filters() {
                                 <MenuItem value={'internship'}>Internship</MenuItem>
                             </Select>
                         </FormControl>
-                        <FormControl sx={{ minWidth: 150 }}>
+                        <FormControl sx={{ minWidth: 150 }}>{/* Location select */}
                             <InputLabel id="location-select-label">Location</InputLabel>
                             <Select
                                 labelId="location-select-label"
@@ -53,7 +54,7 @@ function Filters() {
                                 <MenuItem value={'hybrid'}>Hybrid</MenuItem>
                             </Select>
                         </FormControl>
-                        <FormControl sx={{ minWidth: 150 }}>
+                        <FormControl sx={{ minWidth: 150 }}>{/* Date select */}
                             <InputLabel id="date-select-label">Date</InputLabel>
                             <Select
                                 labelId="date-select-label"
@@ -67,11 +68,10 @@ function Filters() {
                                 <MenuItem value={'three-months'}>3 months</MenuItem>
                             </Select>
                         </FormControl>
+                        <Button variant="contained" id="filters_search_btn">Search</Button>
                     </Grid>
                 </Grid>
             </Grid >
         </>
     )
 };
-
-export { Filters };
