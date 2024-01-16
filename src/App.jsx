@@ -6,15 +6,14 @@ import Grid from '@mui/material/Grid';
 import { useEffect, useState } from 'react';
 
 function App() {
-  { /* const apiKey = import.meta.env.VITE_API_KEY; */ }
-  const [jobs, setJobs] = useState([]);
-  const [selectedJob, setSelectedJob] = useState(null);
+  const [jobs, setJobs] = useState([]); // Get job posts from jobs.json
+  const [selectedJob, setSelectedJob] = useState(null); // selected job from List component
 
-  const handleJobClick = (job) => {
+  const handleJobClick = (job) => { // When click on a job from List component
     setSelectedJob(job);
   }
   useEffect(() => {
-    fetch("jobs.json").then(res => res.json()).then(data => {
+    fetch("jobs.json").then(res => res.json()).then(data => { // Get data from jobs.json
       setJobs(data);
     })
   }, []);

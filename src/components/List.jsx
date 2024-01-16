@@ -1,6 +1,6 @@
 import React from 'react';
 
-const List = ({ jobs, onJobClick }) => {
+const List = ({ jobs, onJobClick }) => { // on jobCLick, pass it's content to Single component
     return (
         <div className='list_wrapper'>
             {jobs.map((job) => (
