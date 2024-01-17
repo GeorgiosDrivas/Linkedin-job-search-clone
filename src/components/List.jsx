@@ -10,7 +10,8 @@ const List = ({ jobs, onJobClick }) => { // on jobCLick, pass it's content to Si
                         <h2 style={{ margin: '0', padding: '0' }}>{job.title}</h2>
                         <p>{job.companyName}</p>
                         <p className='job_location'>{job.jobLocation}</p>
-                        <p>Posted {job.postingDate}</p>
+
+                        <p>{job.postingDate}</p>
                     </div>
                 </div>
             ))}

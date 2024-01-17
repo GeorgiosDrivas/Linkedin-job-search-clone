@@ -1,11 +1,18 @@
 function Single({ job }) { // Get selected job from list
     return (
         <>
-            <h1>{job.title}</h1>
-            <div>
-                <p style={{ textAlign: 'left' }}>{job.companyName}</p>
+            <div className="single_job_top_info">
+                <h1 className="single_job_title">{job.title}</h1>
+                <div className="single_job_details">
+                    <p>{job.companyName} · {job.jobLocation} · {job.postingDate}</p>
+                    <p>{job.salary} · {job.employmentType} · {job.experienceLevel}</p>
+                </div>
             </div>
-            <p>{job.description}</p>
+            <div className="single_job_desc">
+                {job.description.split('\n').map((paragraph, index) => (
+                    <p key={index}>{paragraph}</p>
+                ))}
+            </div>
         </>
     )
 };

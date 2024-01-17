@@ -1,6 +1,7 @@
 body {
     height: 100vh;
     overflow: hidden;
+    font-family: 'Poppins', sans-serif;
 }
 
 .job_wrapper {
@@ -17,7 +18,7 @@ body {
     padding-bottom: 100px;
 }
 
-p {
+p:not(.single_job_desc p) {
     margin: 0;
     padding: 0;
 }
@@ -29,4 +30,28 @@ p {
 .job_wrapper img {
     width: 70px;
     height: 70px;
+}
+
+.single_job_title {
+    font-size: 60px;
+}
+
+.single_job_details {
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.single_job_top_info {
+    text-align: left;
+    padding-left: 20px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.single_job_desc {
+    font-size: 20px;
+    height: 39%;
+    text-align: left;
+    padding: 0 20px;
+    overflow-y: scroll;
 }
