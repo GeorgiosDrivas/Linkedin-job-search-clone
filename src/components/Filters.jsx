@@ -7,10 +7,10 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Button from '@mui/material/Button';
 
-export function Filters() {
+export function Filters({ handlers }) {
     const [type, setType] = useState('');
     const [location, setLocation] = useState('');
-    const [date, setDate] = useState('');
+    const [field, setField] = useState('');
 
     const handleChange = (value) => {
         return (event) => {
@@ -35,7 +35,8 @@ export function Filters() {
                                 label="Type"
                                 onChange={handleChange(setType)}
                             >
-                                <MenuItem value={'permanent'}>Permanent</MenuItem>
+                                <MenuItem value={''}>None</MenuItem>
+                                <MenuItem value={'full-time'}>Full-time</MenuItem>
                                 <MenuItem value={'part-time'}>Part-time</MenuItem>
                                 <MenuItem value={'internship'}>Internship</MenuItem>
                             </Select>
@@ -49,26 +50,29 @@ export function Filters() {
                                 label="Location"
                                 onChange={handleChange(setLocation)}
                             >
+                                <MenuItem value={''}>None</MenuItem>
                                 <MenuItem value={'on-site'}>On-site</MenuItem>
                                 <MenuItem value={'remote'}>Remote</MenuItem>
                                 <MenuItem value={'hybrid'}>Hybrid</MenuItem>
                             </Select>
                         </FormControl>
-                        <FormControl sx={{ minWidth: 150 }}>{/* Date select */}
-                            <InputLabel id="date-select-label">Date</InputLabel>
+                        <FormControl sx={{ minWidth: 150 }}>{/* field select */}
+                            <InputLabel id="field-select-label">Field</InputLabel>
                             <Select
-                                labelId="date-select-label"
-                                id="date-filter-select"
-                                value={date}
-                                label="date"
-                                onChange={handleChange(setDate)}
+                                labelId="field-select-label"
+                                id="field-filter-select"
+                                value={field}
+                                label="field"
+                                onChange={handleChange(setField)}
                             >
-                                <MenuItem value={'week'}>Week</MenuItem>
-                                <MenuItem value={'month'}>Month</MenuItem>
-                                <MenuItem value={'three-months'}>3 months</MenuItem>
+                                <MenuItem value={''}>None</MenuItem>
+                                <MenuItem value={'web-development'}>Web Development</MenuItem>
+                                <MenuItem value={'software-development'}>Software Development</MenuItem>
+                                <MenuItem value={'financial-services'}>Financial Services</MenuItem>
+                                <MenuItem value={'graphic-design'}>Graphic Design</MenuItem>
                             </Select>
                         </FormControl>
-                        <Button variant="contained" id="filters_search_btn">Search</Button>
+                        <Button variant="contained" id="filters_search_btn" onClick={() => handlers(location, type, field)}>Search</Button>
                     </Grid>
                 </Grid>
             </Grid >
