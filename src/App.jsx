@@ -21,12 +21,13 @@ function App() {
     });
   }, []);
 
-  const handleFilter = (locationSelectedValue, typeSelectedValue, fieldSelectedValue) => {
-    if (locationSelectedValue || typeSelectedValue || fieldSelectedValue) {
+  const handleFilter = (locationSelectedValue, typeSelectedValue, fieldSelectedValue, searchInput) => {
+    if (locationSelectedValue || typeSelectedValue || fieldSelectedValue || searchInput) {
       const newLocationValue = locationSelectedValue ? locationSelectedValue.charAt(0).toUpperCase() + locationSelectedValue.slice(1) : '';
       const newTypeValue = typeSelectedValue ? typeSelectedValue.charAt(0).toUpperCase() + typeSelectedValue.slice(1) : '';
 
       const newFieldValue = fieldSelectedValue ? fieldSelectedValue.split("-") : [];
+
 
       for (let i = 0; i < newFieldValue.length; i++) {
         newFieldValue[i] = newFieldValue[i] ? newFieldValue[i][0].toUpperCase() + newFieldValue[i].substr(1) : '';
@@ -38,7 +39,8 @@ function App() {
         return (
           (!locationSelectedValue || filteredJob.location === newLocationValue) &&
           (!typeSelectedValue || filteredJob.employmentType === newTypeValue) &&
-          (!fieldSelectedValue || filteredJob.field === FieldValue)
+          (!fieldSelectedValue || filteredJob.field === FieldValue) &&
+          (!searchInput || filteredJob.title === searchInput)
         );
       });
 

@@ -6,11 +6,13 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Button from '@mui/material/Button';
+import Autocomplete from '@mui/material/Autocomplete';
 
 export function Filters({ handlers }) {
     const [type, setType] = useState('');
     const [location, setLocation] = useState('');
     const [field, setField] = useState('');
+    const [searchValue, setSearchValue] = useState(null);
 
     const handleChange = (value) => {
         return (event) => {
@@ -18,11 +20,31 @@ export function Filters({ handlers }) {
         }
     };
 
+    const handleAutocompleteChange = (event, newValue) => {
+        setSearchValue(newValue.label);
+    };
+
+    const options = [
+        { label: "" },
+        { label: 'Software Engineer' },
+        { label: 'Web Developer' },
+        { label: 'Data Scientist' },
+        { label: 'UI/UX Designer' },
+        { label: 'Frontend Developer' },
+        { label: 'DevOps Engineer' },
+    ]
+
     return (
         <>
             <Grid container>
-                <Grid item xs={4} >{/* Search bar */}
-                    <TextField id="standard-basic" label="Search" variant="standard" />
+                <Grid item xs={4}>{/* Search bar */}
+                    <Autocomplete
+                        id="combo-box-demo"
+                        options={options}
+                        sx={{ width: 300 }}
+                        onChange={handleAutocompleteChange}
+                        renderInput={(params) => <TextField {...params} label="Title" />}
+                    />
                 </Grid>
                 <Grid item xs={7} >{/* Filters */}
                     <Grid container justifyContent={"space-evenly"}>
@@ -72,7 +94,7 @@ export function Filters({ handlers }) {
                                 <MenuItem value={'graphic-design'}>Graphic Design</MenuItem>
                             </Select>
                         </FormControl>
-                        <Button variant="contained" id="filters_search_btn" onClick={() => handlers(location, type, field)}>Search</Button>
+                        <Button variant="contained" id="filters_search_btn" onClick={() => handlers(location, type, field, searchValue)}>Search</Button>
                     </Grid>
                 </Grid>
             </Grid >
