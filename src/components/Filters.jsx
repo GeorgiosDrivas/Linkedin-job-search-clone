@@ -25,7 +25,7 @@ export function Filters({ handlers }) {
     };
 
     const options = [
-        { label: "" },
+        { label: 'None' },
         { label: 'Software Engineer' },
         { label: 'Web Developer' },
         { label: 'Data Scientist' },

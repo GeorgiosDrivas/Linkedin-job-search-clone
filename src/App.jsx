@@ -40,7 +40,7 @@ function App() {
           (!locationSelectedValue || filteredJob.location === newLocationValue) &&
           (!typeSelectedValue || filteredJob.employmentType === newTypeValue) &&
           (!fieldSelectedValue || filteredJob.field === FieldValue) &&
-          (!searchInput || filteredJob.title === searchInput)
+          (searchInput !== 'None' ? filteredJob.title === searchInput : true)
         );
       });
 
