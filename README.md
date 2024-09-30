@@ -1,5 +1,14 @@
-LinkedIn search jobs clone.
+## LinkedIn search jobs clone.
 
-The user can browse through job posts using varius filters such as job type, location or even search the title.
+A web app in which the user can search through jobs, copying the search-job functonality of LinkedIn.
 
-It was created using React JS and Material-ui.
+![screen1](https://github.com/user-attachments/assets/c5ec9b5a-3183-496e-8c72-3f05f96e0634)
+![screen2](https://github.com/user-attachments/assets/7ba6e521-d6ea-482d-866d-48986ba87612)
+
+
+## Technologies
+
+- Typescript
+- ReactJS
+- Material UI
+- Vite
