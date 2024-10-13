@@ -24,14 +24,26 @@ export const Single: React.FC<Props> = ({ job }) => {
       <div className="single_job_top_info">
         <h1 className="single_job_title">{job.title}</h1>
         <div className="single_job_details">
+          <div className="job-wrap">
+            <img src={job.companyLogo} alt="" className="company-logo" />
+            <div className="company-details-wrap">
+              <p>
+                {job.companyName} · {job.city}
+              </p>
+              <p>Posted {job.posted}</p>
+            </div>
+          </div>
           <p>
-            {job.companyName} · {job.city} · Posted {job.posted}
+            <span>
+              Salary: ${job.salary}
+              <br />
+            </span>
+            <span>
+              Location: {job.location}
+              <br />
+            </span>
+            <span>Type: {job.employmentType}</span>
           </p>
-          <p>
-            <span>{job.salary}</span> · <span>{job.location}</span> ·{" "}
-            <span>{job.employmentType}</span>
-          </p>
-          <p>{job.field}</p>
         </div>
       </div>
       <div className="single_job_desc">

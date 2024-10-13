@@ -74,7 +74,7 @@
     "location": "Remote",
     "field": "Software Development",
     "posted": "2 months ago",
-    "employmentType": "Part-time",
+    "employmentType": "Part-Time",
     "description": "Mollit in laborum tempor Lorem incididunt irure. Aute eu ex ad sunt. Pariatur sint culpa do incididunt eiusmod eiusmod culpa. laborum tempor Lorem incididunt."
   },
   {
@@ -140,19 +140,6 @@
     "location": "On-site",
     "posted": "3 weeks ago",
     "employmentType": "Full-time",
-    "description": "Mollit in laborum tempor Lorem incididunt irure. Aute eu ex ad sunt. Pariatur sint culpa do incididunt eiusmod eiusmod culpa. laborum tempor Lorem incididunt."
-  },
-  {
-    "id": 12,
-    "companyName": "Trainline group",
-    "title": "DevOps Engineer",
-    "companyLogo": "/images/Trainline.png",
-    "salary": "€40,000/yr - €60,000/yr",
-    "field": "Software Development",
-    "city": "Boston",
-    "location": "Remote",
-    "posted": "1 month ago",
-    "employmentType": "Part-Time",
     "description": "Mollit in laborum tempor Lorem incididunt irure. Aute eu ex ad sunt. Pariatur sint culpa do incididunt eiusmod eiusmod culpa. laborum tempor Lorem incididunt."
   }
 ]

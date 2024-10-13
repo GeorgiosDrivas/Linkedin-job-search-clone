@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Grid } from "@mui/material";
 import List from "./components/List";
 import { Filters } from "./components/Filters";
-import { Single } from "./components/Single"; // Ensure correct import
+import { Single } from "./components/Single";
 
 interface Job {
   id: number;
@@ -24,24 +24,23 @@ interface DetailedJob extends Job {
 function App() {
   const [jobs, setJobs] = useState<Job[]>([]);
   const [filteredJobs, setFilteredJobs] = useState<Job[]>([]);
-  const [selectedJob, setSelectedJob] = useState<DetailedJob | null>(null); // Use DetailedJob here
+  const [selectedJob, setSelectedJob] = useState<DetailedJob | null>(null);
 
   useEffect(() => {
     fetch("jobs.json")
       .then((res) => res.json())
       .then((data: Job[]) => {
         setJobs(data);
-        setFilteredJobs(data); // Initialize filteredJobs with all jobs
+        setFilteredJobs(data);
       });
   }, []);
 
   const handleJobClick = (job: Job) => {
-    // Assuming you have a way to retrieve detailed job information, possibly from another API call or data structure
     const detailedJob: DetailedJob = {
       ...job,
-      salary: "1000", // Example salary
-      posted: "2024-07-11", // Example posted date
-      description: "Lorem ipsum dolor sit amet", // Example description
+      salary: "1000",
+      posted: "2024-07-11",
+      description: "Lorem ipsum dolor sit amet",
     };
     setSelectedJob(detailedJob);
   };

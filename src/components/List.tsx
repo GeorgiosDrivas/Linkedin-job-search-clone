@@ -12,7 +12,7 @@ interface Job {
 }
 
 interface ListProps {
-  jobs: Job[]; // Ensure this matches your Job interface
+  jobs: Job[];
   onJobClick: (job: Job) => void;
 }
 
