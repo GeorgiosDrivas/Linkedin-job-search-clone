@@ -3,28 +3,12 @@ import { Grid } from "@mui/material";
 import List from "./components/List";
 import { Filters } from "./components/Filters";
 import { Single } from "./components/Single";
-
-interface Job {
-  id: number;
-  companyLogo: string;
-  title: string;
-  companyName: string;
-  city: string;
-  location: string;
-  field?: string;
-  employmentType?: string;
-}
-
-interface DetailedJob extends Job {
-  salary: string;
-  posted: string;
-  description: string;
-}
+import { Job } from "./types/types";
 
 function App() {
   const [jobs, setJobs] = useState<Job[]>([]);
   const [filteredJobs, setFilteredJobs] = useState<Job[]>([]);
-  const [selectedJob, setSelectedJob] = useState<DetailedJob | null>(null);
+  const [selectedJob, setSelectedJob] = useState<Job | null>(null);
 
   useEffect(() => {
     fetch("jobs.json")
@@ -36,11 +20,8 @@ function App() {
   }, []);
 
   const handleJobClick = (job: Job) => {
-    const detailedJob: DetailedJob = {
+    const detailedJob: Job = {
       ...job,
-      salary: "1000",
-      posted: "2024-07-11",
-      description: "Lorem ipsum dolor sit amet",
     };
     setSelectedJob(detailedJob);
   };

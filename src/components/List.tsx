@@ -1,20 +1,5 @@
 import React from "react";
-
-interface Job {
-  id: number;
-  companyLogo: string;
-  title: string;
-  companyName: string;
-  city: string;
-  location: string;
-  field?: string;
-  employmentType?: string;
-}
-
-interface ListProps {
-  jobs: Job[];
-  onJobClick: (job: Job) => void;
-}
+import { ListProps } from "src/types/types";
 
 const List = ({ jobs, onJobClick }: ListProps) => {
   return (

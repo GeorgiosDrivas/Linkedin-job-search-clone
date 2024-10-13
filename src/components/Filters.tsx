@@ -13,21 +13,7 @@ import Autocomplete, {
   AutocompleteChangeReason,
   AutocompleteChangeDetails,
 } from "@mui/material/Autocomplete";
-
-type HandlersFunction = (
-  location: string,
-  type: string,
-  field: string,
-  searchValue: string
-) => void;
-
-interface FiltersProps {
-  handlers: HandlersFunction;
-}
-
-interface Option {
-  label: string;
-}
+import { FiltersProps, Option } from "src/types/types";
 
 export function Filters({ handlers }: FiltersProps) {
   const [type, setType] = useState<string>("");

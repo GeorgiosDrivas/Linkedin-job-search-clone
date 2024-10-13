@@ -1,22 +1,5 @@
 import React from "react";
-
-interface DetailedJob {
-  id: number;
-  companyLogo: string;
-  title: string;
-  companyName: string;
-  city: string;
-  location: string;
-  salary: string;
-  posted: string;
-  description: string;
-  field?: string;
-  employmentType?: string;
-}
-
-interface Props {
-  job: DetailedJob;
-}
+import { Props } from "src/types/types";
 
 export const Single: React.FC<Props> = ({ job }) => {
   return (
